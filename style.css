@@ -12,15 +12,37 @@ body{
 }
 .section-container{   
    max-width: 1320px;
-   margin: 130px auto;
+   margin: auto;
+}
+.section-space{
+   margin-top: 130px;
+   margin-bottom: 130px;
 }
 /* intro-area-css */
-.intro-content{
-   background-image: url(resources/Banner\ Image.png);
+.intro-area{
+   margin-top: 50px;
+}
+.intro-wrapper{
+   background: url(resources/Banner-Image.png);
    background-size: cover;
    max-height: 360px;
    background-position: center;
    background-repeat: no-repeat;
+   padding: 177px 0;
+   border-radius: 20px;
+   position: relative;
+   z-index: 2;
+}
+.intro-wrapper::before{
+   position: absolute;
+   content: "";
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   background: rgb(0,0,0,.5);
+   border-radius: 20px;
+   z-index: -2;
 }
 .intro-content h1{
    color: #FFF;
@@ -66,10 +88,10 @@ body{
 /* welcome area css */
 .welcome-bg{
    height: 600px;
-   background-image: url(resources/Vectorrr.png);
+   background: url(resources/Vectorrr.png);
    background-repeat: no-repeat;
    background-size: cover;
-
+   border-radius: 20px;
 }
 .welcome-wrapper{      
    background-color: black;
@@ -79,6 +101,7 @@ body{
    display: flex;
    align-items: center;
    padding: 0 130px;
+   border-radius: 20px;
 }
 .welcome-content h2{
    color: #FFF;
@@ -86,6 +109,7 @@ font-family: Merriweather;
 font-size: 60px;
 font-weight: 900;
 line-height: 1.5;
+letter-spacing: 7.04px;
 }
 .welcome-content p{
    color: rgba(255, 255, 255, 0.80);
@@ -95,7 +119,7 @@ line-height: 1.5;
    padding: 30px 0;
    line-height: 1.5;
 }
-.welcome-content button{
+.welcome-content a{
    color: #FFF;
    text-align: center;
    font-family: Inter;
@@ -105,12 +129,16 @@ line-height: 1.5;
    background-color: transparent;
    border: 0;
    padding-left: 30px;
+   text-decoration: none;
+   display: inline-block;
+
 }
 /* joining time css */
 .joining-content{   
-   background-color: #ffc0cb42;
+   background: linear-gradient(180deg, rgba(255, 0, 0, 0.10) 0%, rgba(255, 0, 0, 0.00) 100%);;
    text-align: center;
    padding: 110px 0;
+   border-radius: 20px;
 }
 .joining-content h2{
    color: #070211;
@@ -129,7 +157,7 @@ line-height: 1.5;
    line-height: 1.75; 
    text-transform: capitalize;
 }
-.joining-content button{
+.joining-content a{
    color: #FFF;
    text-align: center;
    font-family: Inter;
@@ -142,6 +170,8 @@ line-height: 1.5;
    border: 0;
    border-radius: 5px;
    margin-top: 50px;
+   text-decoration: none;
+   display: inline-block;
 }
 /* offers section css */
 .offer-wrapper{
@@ -194,6 +224,7 @@ line-height: 1.5;
    font-size: 48px;
    font-weight: 700;
    line-height: 1.5;
+   margin-bottom: 10px;
 }
 .offers-more-content p{
    color: rgba(7, 2, 17, 0.60);
@@ -206,6 +237,9 @@ line-height: 1.5;
    margin-top: 30px;
 }
 /* Portfolio content css */
+.portfolio-content{
+   margin-bottom: 50px;
+}
 .portfolio-content h3{
    color: #F00;
    font-family: Inter;
@@ -230,23 +264,29 @@ line-height: 1.5;
 }
 .portfolio-images{
    display: flex;
+   gap: 24px;
+   flex-wrap: wrap;
 }
-.img-colm{
-   width: 424px;
+.img-colm{     
+   width: 32%;
    height: 450px;
-   flex-shrink: 0;
    border-radius: 5px solid black;
-   margin: 50px 24px 0 0;
+   overflow: hidden;
+   border-radius: 20px;
 }
-.each-img{  
-   margin-top: 24px;
+
+.each-img img{
+   transition: .3s;
+}
+.img-colm:hover img{
+   transform: scale(1.2);
 }
 /* Newsletter area css */
 .newsletter-content{
    text-align: center;
-   margin-top: 700px;
    background-color: #ffc0cb4d;
    padding: 85px 0;
+   border-radius: 20px;
 }
 .email-icon{
    padding-bottom: 45px;
@@ -266,6 +306,7 @@ line-height: 1.5;
    line-height: 1.6; /* 160% */
    max-width: 896px;
    margin: 22px auto;
+   margin-bottom: 30px;
    /* text-align: center; */
 }
 /* Subscription area css */
@@ -280,16 +321,16 @@ line-height: 1.5;
    width: 70%;
    width: 100%;
    color: rgba(7, 2, 17, 0.30);
-   text-align: center;
    font-family: Inter;
    font-size: 18px;
    font-weight: 400;
-   /* padding: 32px 10px; */
-   /* padding-left: 10px; */
    border-radius: 50px 0 0 50px;
    border: 0;
+   padding-left: 20px;
+   padding-right: 20px;
 }
 .subscription-bar button{
+   cursor: pointer;
    width: 40%;
    height: 100%;
    border-radius: 0px 50px 50px 0px;
@@ -319,15 +360,18 @@ line-height: 1.5;
    line-height: 1.66;
 }
 .footer-wrapper{
-   padding: 170px 0;
+   padding: 120px 0;
 }
-.footer-wrapper hr{
+.footer-wrapper{
    margin: 45px 0;
-   color: rgba(255, 255, 255, 0.15);
 }
 .footer-icons{
    display: flex;
    justify-content: center;
+   border-top: 1px solid rgba(255, 255, 255, 0.15);
+   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+   padding: 50px 0;
+   margin: 50px 0;
 }
 .icon-img{
    margin: 10px;
@@ -336,7 +380,7 @@ line-height: 1.5;
    display: flex;
    justify-content: space-between;
 }
-.copywrite p{
+.copywrite a,p{
    color: #FFF;
    font-family: Inter;
    font-size: 24px;
@@ -344,4 +388,5 @@ line-height: 1.5;
    font-weight: 500;
    line-height: normal;
    text-transform: capitalize;
+   text-decoration: none;
 }
