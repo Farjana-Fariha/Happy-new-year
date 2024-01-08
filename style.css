@@ -307,7 +307,6 @@ letter-spacing: 7.04px;
    max-width: 896px;
    margin: 22px auto;
    margin-bottom: 30px;
-   /* text-align: center; */
 }
 /* Subscription area css */
 .subscription-bar{
@@ -352,12 +351,13 @@ letter-spacing: 7.04px;
    display: flex;
    justify-content: space-between;
 }
-.contact-info p{
+.contact-info p,a{
    font-size: 24px;
    color: #fff;
    font-family: 'Inter';
    font-weight: 400;
    line-height: 1.66;
+   text-decoration: none;
 }
 .footer-wrapper{
    padding: 120px 0;
@@ -380,7 +380,17 @@ letter-spacing: 7.04px;
    display: flex;
    justify-content: space-between;
 }
-.copywrite a,p{
+.copywrite p{
+   color: #FFF;
+   font-family: Inter;
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   text-transform: capitalize;
+   text-decoration: none;
+}
+.copywrite a{
    color: #FFF;
    font-family: Inter;
    font-size: 24px;
